@@ -1,0 +1,4 @@
+name,time,distance,velocity,avgdb
+fast,5,3.03,0.606,
+mid,7.5,3.03,0.404,
+slow,11,3.03,0.275,
