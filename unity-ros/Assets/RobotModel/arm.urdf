@@ -139,4 +139,6 @@
         <child link="link5"/>
         <limit effort="30" velocity="1.0" lower="-1.5708" upper="3.1416"/>
     </joint>
+    <disable_collision link1="base_link" link2="link1">
+    </disable_collision>
 </robot>

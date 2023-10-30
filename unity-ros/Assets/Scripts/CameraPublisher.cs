@@ -56,5 +56,6 @@ public class CameraPublisher : MonoBehaviour
         ros.Publish(topicName, msg);
         cam.targetTexture = null;
         Debug.Log("Published Image");
+
     }
 }
