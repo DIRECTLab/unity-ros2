@@ -97,7 +97,7 @@ if __name__ == '__main__':
   epochs = 2_000
   batch_size = 64
   
-  TRAIN = False
+  TRAIN = True
   LOAD_MODEL = True
   
   rewards, policy_losses, value_losses, mean_test_rewards = [], [], [], []
