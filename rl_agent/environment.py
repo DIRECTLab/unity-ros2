@@ -97,8 +97,8 @@ if __name__ == '__main__':
   epochs = 2_000
   batch_size = 64
   
-  TRAIN = True
-  
+  TRAIN = False
+  LOAD_MODEL = True
   
   rewards, policy_losses, value_losses, mean_test_rewards = [], [], [], []
   epoch = 0
@@ -107,13 +107,16 @@ if __name__ == '__main__':
   
   time_last_checkpoint = time.time()
     
+  if LOAD_MODEL:
+    start_step, memory = model.load_checkpoint("rl_agent\checkpoints\ep_92.pth.tar")
   if not TRAIN:
-    start_step, memory = model.load_checkpoint()
+    ou_noise = None
     
   loop = tqdm(range(epochs))
     
   for i, _ in enumerate(loop):
-    ou_noise.reset()
+    if ou_noise is not None:
+      ou_noise.reset()
     epoch_return = 0
     
     state, info = env.reset()
